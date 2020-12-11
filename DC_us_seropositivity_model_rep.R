@@ -229,8 +229,8 @@ df <- df[order(df$date), ]
 df$pred_infections_total <- ave(df$pred_infections, interaction(df$age, df$sex), FUN= function(x) cumsum(x))
 
 # Plot 3: (Panel A)
-write.csv(df, "us_covid_model.csv")
-df <- read.csv("us_covid_model.csv")
+#write.csv(df, "us_covid_model.csv")
+#df <- read.csv("us_covid_model.csv")
 df$date <- as.Date(df$date)
 
 ggplot(df[!duplicated(df$week), ], aes(x=as.Date(date)))+
