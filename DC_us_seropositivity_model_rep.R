@@ -49,7 +49,7 @@ if(load.nature){
   
   # Load IFR Nature:
   ifr <- read.csv("ifr_by_age_nature.csv")
-  ifr$age <- ifr$ï..age
+  ifr$age <- ifr[, 1]
   ifr$ifr_raw <- ifr$ifr
   ifr$ifr <- as.numeric(unlist(lapply(ifr$ifr_raw, FUN = function(x) 
     unlist(strsplit(x, " "))[1])))
